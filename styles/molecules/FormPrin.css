@@ -1,0 +1,158 @@
+.FormPrin {
+  &-form{
+    @apply flex flex-col gap-[1.45rem] mt-[1.5rem] mb-[2rem];
+  }
+
+  input,
+  select,
+  textarea {
+      @apply bg-white  font-roboto font-normal text-content text-[1.45rem] rounded-[0.6rem] py-[1rem] px-[1.5rem];
+      border: 0.854617px solid #5FA4FF;
+  }
+
+  .select{
+    select {
+      -webkit-appearance: none;
+      @apply bg-white rounded-[.4rem] font-roboto font-normal text-gray-400 relative;
+     }
+
+    .icon-arrow-select{
+      @apply absolute right-[5%] top-[2rem] cursor-pointer text-content text-[.7rem];
+    }
+  
+   }
+  
+
+
+  
+  @media screen(laptop){
+    &-form{
+      @apply grid grid-cols-2 ;
+      gap: calc(1.7rem * var(--scale));
+    }
+
+    input,
+    select,
+    textarea{
+      @apply rounded-[.7rem];
+      font-size: calc(1.7rem * var(--scale));
+      border: 1px solid #5FA4FF;
+      padding: calc(1.1rem * var(--scale)) calc(1.4rem * var(--scale));
+    }
+
+      
+  .select{
+    @apply col-span-2;
+
+    .icon-arrow-select{
+      @apply absolute right-[5%] top-[2rem] cursor-pointer text-content;
+    }
+  
+   }
+
+  }
+ 
+
+  textarea {
+      min-height: 12rem;
+      @apply pt-4;
+  
+      @media screen(laptop) {
+        min-height: calc(13.9rem * var(--scale));
+      }
+  }
+  
+  &-error {
+      /* margin-top: 0.4em; */
+      @apply text-red-500;
+      @media screen(laptop){
+        font-size: calc(1.3rem * var(--scale));
+      }
+  }
+  
+  &-send {
+      @apply flex mt-2 items-center gap-12;
+  
+      @media screen(laptop) {
+        @apply col-span-2;
+      }
+  }
+  
+  &-btn {
+      @apply text-[1.5rem] py-[1rem] px-[4.5rem] text-white font-medium bg-primary;
+      border-radius: calc(7px * var(--scale));
+
+      @media screen(laptop) {
+        @apply relative isolate; ;
+        padding: calc(1.2rem * var(--scale)) calc(5rem * var(--scale));
+        font-size: calc(1.8rem * var(--scale));
+      
+        &::before{
+          transition: all  1s ease-out;
+          content: "";
+          border-radius: calc(7px * var(--scale));
+          @apply absolute inset-0 z-[-1] bg-primary;
+        } 
+        &::after{
+          transition: all 1s ease-out;
+          content: "";
+          border-radius: calc(7px * var(--scale));
+          background: linear-gradient(180deg, #5FA4FF 0%, #358AF9 46.35%, #056CF2 100%); 
+          @apply absolute inset-0 z-[-1] opacity-0 ;
+        } 
+
+        &:hover::after {
+          background: linear-gradient(180deg, #5FA4FF 0%, #358AF9 46.35%, #056CF2 100%);
+          opacity: 1;
+        }
+
+      }
+  }
+  
+  &-response {
+      font-size: 1.4rem;
+      padding: 0 1em 1em;
+      @apply absolute bottom-[-1%] left-0 text-lime-700;
+  
+      @media screen(laptop) {
+        font-size: calc(1.6rem * var(--scale));
+        @apply static col-span-2 p-0;
+      }
+  
+      &.failure {
+        @apply text-red-500;
+      }
+    }
+}
+  
+
+  .FormPrin{
+    &-h3{
+      @apply font-roboto font-medium text-[1.7rem] text-secondary text-center leading-[56%] tracking-[0.2em];
+    }
+    &-h2{
+      @apply font-roboto font-bold text-[2.1rem] text-primary text-center leading-[110%] mt-[1rem] mb-[1.5rem];
+   }
+   &-p{
+    @apply font-roboto font-light text-[1.5rem] text-content text-center  leading-[178%] ;
+
+    }
+    @media screen(laptop){
+        &-h3{
+            font-size: calc(1.7rem * var(--scale));
+        }
+        &-h2{
+            font-size: calc(3rem * var(--scale));
+            margin-top: calc(1.5rem * var(--scale));
+            margin-bottom: calc(1.5rem * var(--scale));
+        }
+        &-p{
+          @apply text-start;
+            font-size: calc(1.8rem * var(--scale));
+            margin-top: calc(2rem * var(--scale));
+            margin-bottom: calc(2.5rem * var(--scale));
+            
+        }
+        
+    }
+}

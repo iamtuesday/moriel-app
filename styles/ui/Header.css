@@ -1,0 +1,101 @@
+.Header {
+  filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.2));
+  @apply bg-white h-[5.8rem] sticky top-0 z-20;
+  /* opacity: 0.9; */
+
+  @media screen(laptop) {
+    @apply bg-white text-[#252525];
+    opacity: 0.9;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+    height: calc(9.8rem * var(--scale));
+    top: 0px;
+  }
+
+  &.active {
+    @media screen(laptop) {
+      @apply bg-white;
+
+      .Navbar-ul {
+        @apply text-[#787878] font-normal;
+      }
+
+      .Navbar-li {
+        &:hover,
+        &.isActive {
+          @apply relative isolate;
+          &::after {
+            content: "";
+            width: 3.5rem;
+            height: 0.2rem;
+            @apply absolute  bg-primary;
+          }
+        }
+
+        &:last-child {
+          &:hover::after {
+            @apply bg-primary;
+          }
+
+          .Navbar-a {
+            @apply text-white;
+            &:hover {
+              @apply text-[#252525];
+            }
+          }
+        }
+      }
+
+      .Navbar-a {
+        @apply text-[#787878];
+      }
+    }
+  }
+
+  &-overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    @apply fixed inset-0 bg-black/70 pointer-events-none w-screen h-screen;
+
+    @media screen(laptop) {
+      @apply hidden;
+    }
+
+    &.isActive {
+      opacity: 1;
+      @apply pointer-events-auto;
+    }
+  }
+
+  &-logo {
+    width: 8.5rem;
+    @apply left-8 fixed top-[-1.5rem];
+
+    @media screen(laptop) {
+      width: calc(10rem * var(--scale));
+      left: 9.7vw;
+      top: 0;
+      @apply fixed;
+    }
+  }
+
+  > .socials {
+    top: 1.8rem;
+    font-size: 2rem;
+    @apply flex gap-4 text-primary fixed right-28;
+
+    @screen laptop {
+      @apply hidden;
+    }
+  }
+
+  &-menuIcon {
+    /* top: 1.2rem; */
+    transition: transform 0.3s ease;
+    @apply fixed right-0 z-10;
+
+    /* &.isActive {
+      top: 1.8rem;
+      transform: translate(-1.7rem, 0.5rem);
+    } */
+  }
+}

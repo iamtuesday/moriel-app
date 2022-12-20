@@ -1,0 +1,154 @@
+@import "fonts.css";
+@import "icons.css";
+@import "scale.css";
+/* @import "./atoms";
+@import "./molecules";*/
+@import "./atoms";
+@import "./molecules";
+@import "./ui";
+@import "./organisms"; 
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5rem;
+  @apply font-roboto;
+  @media screen(laptop) {
+    font-size: max(1.4rem, calc(1.9rem * var(--scale)));
+  }
+
+  &.no-scroll {
+    @apply overflow-hidden;
+  }
+}
+
+h1,
+h2 {
+  @apply font-roboto;
+
+  &.active {
+    color: red;
+  }
+}
+
+p {
+  line-height: 1.5;
+  @apply font-light font-roboto text-[#787878];
+  @media screen(laptop) {
+    font-size: max(1.5rem, calc(1.9rem * var(--scale)));
+    line-height: calc(32 / 19);
+  }
+}
+
+picture {
+  @apply block w-full h-full overflow-hidden;
+}
+
+img {
+  @apply max-w-full h-auto object-cover;
+}
+
+input,
+select,
+textarea {
+  @apply w-full border-none bg-none;
+
+  &:focus {
+    @apply outline-none;
+  }
+}
+
+textarea {
+  resize: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.v-error {
+  font-size: 1.2rem;
+  color: #ff7490;
+  margin-top: 0.5rem;
+  margin-left: 1.5rem;
+  transition: all 0.3s ease-in-out;
+  height: inherit;
+  line-height: 1;
+  @media (min-width: 768px) {
+    font-size: 1.4rem;
+  }
+  @media (min-width: 1200px) {
+    font-size: 1.3rem;
+  }
+  @media (min-width: 1700px) {
+    font-size: 1.5rem;
+  }
+}
+
+
+.Form-error{
+  @apply text-red-500 text-[1.4rem];
+  @media screen(laptop){
+    font-size: calc(1.5rem * var(--scale));
+  }
+}
+
+.Form-response{
+  @media screen(laptop){
+    @apply flex justify-center col-span-2  text-green-400;
+    font-size: calc(1.7rem * var(--scale));
+  } 
+  &.failure{
+    @apply  text-red-500 text-[1.6rem];
+    @media screen(laptop){
+      font-size: calc(1.7rem * var(--scale));
+    }
+  } 
+}
+
+
+.main-page {
+  animation-name: fadeIn;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in;
+}
+@keyframes fadeIn {
+  0% {
+     opacity: 0;
+  }
+  100% {
+     opacity: 1;
+  }
+}
+.page-enter {
+  opacity: 0;
+  transform: scale(1.1);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+.page-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}

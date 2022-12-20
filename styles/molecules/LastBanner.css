@@ -1,0 +1,14 @@
+.LastBanner{
+    @apply bg-[#F79B11] px-[1.6rem] pt-[3.3rem]  pb-[4.4rem] flex flex-col  items-center justify-center gap-[1.5rem];
+    &-p{
+        @apply font-dmsans font-bold leading-[120%] text-[2.5rem] text-white text-center;
+    }
+    @media screen(laptop){
+        @apply flex-row p-0;
+        height: calc(21rem * var(--scale));
+        gap: calc(26rem * var(--scale));
+        &-p{
+            font-size: calc(4rem * var(--scale));
+        }
+    }
+}

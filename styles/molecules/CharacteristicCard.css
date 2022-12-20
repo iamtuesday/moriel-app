@@ -1,0 +1,29 @@
+.CharacteristicCard {
+  @apply flex flex-col items-center text-center gap-[2rem];
+
+  @media screen(laptop){
+  gap: calc(2.8rem * var(--scale));
+  }
+
+  picture{
+    @apply bg-primary rounded-full flex items-center justify-center w-[8.8rem] h-[8.8rem]  p-[2rem];
+    /* img{
+      @apply p-[2rem];
+    } */
+
+    @media screen(laptop) {
+      width: calc(11.4rem * var(--scale));
+      height: calc(11.4rem * var(--scale));
+
+      padding: calc(2.8rem * var(--scale));
+    }
+  }
+
+  &-p {
+    @apply font-roboto font-light text-[1.5rem] leading-[160%] text-content;
+    @media screen(laptop) {
+      font-size: calc(1.9rem * var(--scale));
+    }
+  }
+  
+}

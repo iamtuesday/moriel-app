@@ -1,0 +1,50 @@
+.ReviewCard {
+  @apply grid grid-cols-[29%_71%] items-center;
+  @media screen(laptop){
+    @apply  grid-cols-[22%_78%];
+  }
+  &-content{
+    @apply flex flex-col gap-[1.5rem];;
+    @media screen(laptop){
+      /* gap: calc(4.4rem * var(--scale)); */
+    }
+  }
+  &-p {
+    @apply font-dmsans italic  font-medium text-[1.5rem] text-content ;
+    @media screen(laptop) {
+      font-size: calc(1.9rem * var(--scale));
+      width: calc(46.7rem * var(--scale));
+    }
+  }
+  &-h3 {
+    font-size: calc(1.8rem * var(--scale));
+    @apply font-roboto  font-medium text-[1.5rem]  text-content;
+    @media screen(laptop) {
+      font-size: calc(1.8rem * var(--scale));
+    }
+  }
+  &-picture {
+    @apply relative rounded-full block isolate overflow-visible w-[8.2rem] h-[8.2rem];
+    border: 1.46839px solid #5FA4FF;
+
+    img{
+      @apply rounded-full w-[7.3rem] h-[7.3rem] p-[.25rem];
+    }
+
+    @media screen(laptop) {
+      width: calc(11.1rem * var(--scale));
+      height: calc(11.1rem * var(--scale));
+      border: 2px solid #5FA4FF;
+
+      img{
+        @apply rounded-full p-[.6rem];
+        width: calc(9.9rem * var(--scale));
+        height: calc(89.9em * var(--scale));
+        
+      }
+    }
+
+
+  }
+ 
+}

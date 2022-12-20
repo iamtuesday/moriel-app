@@ -1,0 +1,97 @@
+.Footer {
+    @apply text-white pt-[1.8rem] pb-[3.5rem] px-8 bg-[#383838];
+  
+    @media screen(laptop) {
+      padding: calc(4rem * var(--scale)) 0;
+      @apply  px-0;
+    }
+  
+    &-container {
+      @apply flex flex-col gap-[1.5rem];
+      @media screen(laptop) {
+        width: 100%;
+        gap: calc(12rem * var(--scale)); 
+        @apply  flex-row items-center justify-center;
+      }
+    }
+  
+    &-socials {
+      font-size: 1.9rem ;
+      @apply  flex gap-[1.5rem];
+  
+      @media screen(laptop) {
+        font-size: calc(2.4rem * var(--scale));
+        gap: calc(4rem * var(--scale));
+        @apply border-none  flex items-center gap-4 border-b border-b-white ;
+      }
+    }
+  
+    &-ul {
+      @apply flex flex-col mt-8 gap-6;
+  
+      @media screen(laptop) {
+        gap: calc(12rem * var(--scale));
+        @apply flex-row mt-0;
+      }
+    }
+  
+    &-a {
+      font-size: 1.4rem;
+      @apply flex  items-center gap-[1.5rem] font-roboto font-medium;
+  
+      @media screen(laptop) {
+        @apply flex items-center;
+        gap: calc(1rem * var(--scale));
+        font-size: calc(1.9rem * var(--scale));
+      }
+
+    }
+  
+    &-i {
+      font-size: 1.35rem;
+  
+      @media screen(laptop) {
+        font-size: calc(1.8rem * var(--scale));
+      }
+
+    }
+    &-Socials{
+      @apply flex gap-[1.2rem] items-center;
+      @media screen(laptop) {
+        gap: calc(1.5rem * var(--scale));
+      }
+    }
+
+    &-lblFollow{
+      @apply hidden;
+      @media screen(laptop) {
+        @apply block font-roboto font-medium leading-[170%] text-white;
+        font-size: calc(2.1rem * var(--scale));
+      }
+    }
+
+    &-lblSolar{
+      @apply hidden;
+      @media screen(laptop) {
+        @apply block;
+        font-size: calc(2.1rem * var(--scale));
+      }
+    }
+  }
+
+  .icon-phone-2{
+    @apply text-[1.7rem];
+    @media screen(laptop) {
+      font-size: calc(2.1rem * var(--scale));
+    }
+  }
+
+  .icon-schedule{
+    @apply mr-[0.5rem];
+    @media screen(laptop) {
+      @apply mr-0;
+      font-size: calc(2.3rem * var(--scale));
+    }
+  }
+  
+

@@ -1,0 +1,104 @@
+
+.btn {
+  &-default {
+    @apply rounded-[.5rem] px-[2rem] py-[1.5rem] relative isolate font-dmsans leading-[170%] text-white  uppercase font-bold text-[1.5rem];
+    letter-spacing: 0.02em;
+
+    &::before {
+      content: "";
+      @apply absolute inset-0 bg-[#F79B11] rounded-[0.5rem] z-[-1];
+   }
+   &::after {
+      transition: all 0.8s ease-out;
+      content: "";
+      background: linear-gradient(180deg, #F7C411 0%, #F7AD11 44.27%, #F79B11 100%);
+      @apply absolute inset-0 rounded-[0.5rem] opacity-0 z-[-1];
+   }
+
+   &:hover::after {
+    @apply opacity-100;
+   }
+
+   @screen laptop {
+    font-size: calc(1.7rem * var(--scale));
+    padding: calc(1.6rem * var(--scale)) calc(2.5rem * var(--scale));
+     
+   }
+   
+   
+   .icon-arrow {
+    @apply text-[.8rem] ml-[1.5rem] text-white;
+    @screen laptop {
+       font-size: calc(.8rem * var(--scale));
+    } 
+    }
+   }
+
+  &-light {
+    @apply rounded-[.5rem] px-[1.5rem] py-[0.8rem] relative isolate font-dmsans leading-[170%] text-white   font-bold text-[1.5rem] flex items-center;
+    letter-spacing: 0.02em;
+
+    &::before {
+      content: "";
+      @apply absolute inset-0 bg-[#F79B11] rounded-[0.5rem] z-[-1];
+   }
+   &::after {
+      transition: all 0.8s ease-out;
+      content: "";
+      background: linear-gradient(180deg, #F7C411 0%, #F7AD11 44.27%, #F79B11 100%);
+      @apply absolute inset-0 rounded-[0.5rem] opacity-0 z-[-1];
+   }
+
+   &:hover::after {
+    @apply opacity-100;
+   }
+
+   @screen laptop {
+    font-size: calc(1.7rem * var(--scale));
+    padding: calc(1rem * var(--scale)) calc(2.5rem * var(--scale));
+     
+   }
+   
+   
+   .icon-arrow {
+    @apply text-[.5rem] ml-[1.5rem] text-white;
+    @screen laptop {
+       font-size: calc(.5rem * var(--scale));
+    } 
+    }
+  }
+
+  &-gold{
+   @apply rounded-[.5rem] px-[1.5rem] py-[0.8rem] relative isolate font-dmsans leading-[170%] text-white   font-bold text-[1.5rem] flex items-center;
+   letter-spacing: 0.02em;
+
+   &::before {
+     content: "";
+     @apply absolute inset-0 bg-[#F7C411] rounded-[0.5rem] z-[-1];
+  }
+  &::after {
+     transition: all 0.8s ease-out;
+     content: "";
+     background: linear-gradient(180deg, #F7C411 0%, #F7AD11 44.27%, #F7C411 100%);
+     @apply absolute inset-0 rounded-[0.5rem] opacity-0 z-[-1];
+  }
+
+  &:hover::after {
+   @apply opacity-100;
+  }
+
+  @screen laptop {
+   font-size: calc(1.7rem * var(--scale));
+   padding: calc(1rem * var(--scale)) calc(2.5rem * var(--scale));
+    
+  }
+  
+  
+  .icon-arrow {
+   @apply text-[.5rem] ml-[1.5rem] text-white;
+   @screen laptop {
+      font-size: calc(.5rem * var(--scale));
+   } 
+   }
+  }
+}

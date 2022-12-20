@@ -1,0 +1,113 @@
+ .Navbar {
+  padding-top: 1.3rem;
+  padding-bottom: 5.2rem;
+  border-radius: 0 0 1.5rem 1.5rem;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+  @apply bg-white fixed top-0 right-0 left-0;
+
+  @media screen(laptop) {
+    @apply static inset-auto p-0 transform-none rounded-none h-full bg-transparent;
+  }
+
+  &.isActive {
+    transform: translateY(0);
+  }
+
+  &-container {
+    margin-right: 6.3rem;
+    @apply flex justify-between ml-12;
+  }
+
+  &-logo {
+    width: 11rem;
+
+    @screen laptop {
+      @apply hidden;
+    }
+  }
+
+  .socials {
+    font-size: 2.5rem;
+    margin-right: 1.2rem; 
+    @apply flex text-primary gap-4;
+
+    @screen laptop {
+      @apply hidden;
+    }
+  }
+
+  &-ul {
+    margin-top: 1.6rem;
+    font-size: 1.8rem;
+    @apply font-normal  font-roboto flex flex-col text-content;
+
+    @media screen(laptop) {
+       @apply flex flex-row m-0 font-normal mx-auto  h-full items-center justify-end text-[#787878];
+       font-size: calc(1.9rem * var(--scale));
+       gap: calc(4rem * var(--scale));
+       width: 76.5%;
+       max-width: 150.2rem;
+
+       .Navbar-li{
+        &:hover{
+          &::after{
+            content: '';
+            width: 3.5rem;
+            height: 0.2rem;
+            @apply absolute  bg-primary top-[115%];
+          }
+        }
+
+        &:last-child{
+          &:hover::after{
+            @apply  bg-primary ;
+          }
+        }
+      }
+    }
+
+ }
+
+
+  &-li {
+    border-top: 1px solid #5FA4FF;
+    padding: 0.2rem 0;
+    @apply px-12;
+
+
+    &.active{
+      @apply font-medium;
+      @media screen(laptop){
+        @apply text-primary font-normal;
+        &::after{
+          content: '';
+          width: 3.5rem;
+          height: 0.2rem;
+          @apply absolute  bg-primary top-[115%];
+        }
+      }
+    }
+
+    @media screen(laptop) {
+      transition: all 0.3s ease;
+      @apply border-none p-0 relative isolate flex justify-center;
+
+      &:hover{
+        @apply text-primary;
+        
+      }
+      
+      
+    }
+
+  
+  }
+
+  &-a {
+    @apply block cursor-pointer ;
+  }
+
+
+
+} 

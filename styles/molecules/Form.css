@@ -1,0 +1,80 @@
+.FormFile{
+    @apply flex flex-col bg-white   rounded-[1rem] mx-[1.7rem] px-[3.5rem] pt-[2.8rem] pb-[6.2rem]; ;
+    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+    gap: calc(1.4rem * var(--scale));
+    &-field{
+        input {
+            @apply font-roboto font-light text-content;
+            border: 1px solid #5FA4FF;
+            border-radius: 5px;
+            padding: calc(.8rem * var(--scale)) calc(1.2rem * var(--scale));
+        }
+        textarea {
+            @apply font-roboto font-light text-content h-[12.7rem];
+            border: 1px solid #5FA4FF;
+            border-radius: 5px;
+            padding: calc(.8rem * var(--scale)) calc(1.2rem * var(--scale));
+        }
+
+        @media screen(laptop){
+            input {
+                font-size: calc(1.7rem * var(--scale));            }
+            textarea {
+                height: calc(11.3rem * var(--scale));
+                font-size: calc(1.7rem * var(--scale));   
+            }
+        }
+    }
+
+    .uploadBtn{
+        @apply flex justify-between px-[1.2rem] py-[0.8rem] ;
+        border: 1px solid #5FA4FF;
+        border-radius: 5px;
+        &-Text{
+            @apply  font-roboto font-light text-gray-400 ;
+        }
+
+        .icon-upload{
+            @apply cursor-pointer text-secondary;
+            margin-right: calc(1rem * var(--scale));
+        }
+        
+        @media screen(laptop){
+            padding: calc(.8rem * var(--scale)) calc(1.2rem * var(--scale));
+            &-Text{
+                font-size: calc(1.7rem * var(--scale));   
+            }
+        }
+
+  
+       
+       
+    }
+
+    &-Submit{
+        @apply mx-auto;
+    }
+
+    &-Error{
+        @apply text-red-500;
+        font-size: calc(1.7rem * var(--scale));
+        &::before {
+            display: inline;
+            content: "⚠ ";
+          }
+    }
+
+    @media screen(laptop){
+        @apply bg-white rounded-[1rem] absolute top-0 right-0;
+        width: calc(49.7rem * var(--scale));
+        box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+        padding: 0 calc(4.8rem * var(--scale));
+        padding-top: calc(5.1rem * var(--scale));
+        padding-bottom: calc(3.1rem * var(--scale));
+        top: calc(14.9rem * var(--scale));
+        right: calc(38rem * var(--scale));
+    }
+    
+}
+
+

@@ -1,0 +1,128 @@
+.BannerPrin-Slide{
+    @apply w-full;
+    background-image: var(--bg-mobile); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @screen laptop{
+        background-image: var(--bg-desktop); 
+    }
+   
+}
+
+.BannerPrin{
+    @apply relative isolate ;
+    margin-top: calc(-6rem * var(--scale));
+
+
+
+    .swiper-slide{
+        @apply h-[67.7rem];
+        &::after{
+            content: '';
+            background: rgba(0, 0, 0, 0.4);
+            @apply absolute inset-0 z-[1];
+        }    
+    }
+
+    &-content{
+        @apply absolute bottom-[20rem] left-[2.3rem] z-[2];
+    }
+
+    &-h2{
+        @apply font-dmsans font-bold leading-[100%] text-white relative text-[3.4rem] pb-[2rem];
+        text-shadow: 0px 6px 5px rgba(0, 0, 0, 0.3);
+
+        &::after{
+            content:"";
+            bottom: 0;
+            left: 0;
+            @apply absolute bg-[#F79B11] w-[7.3rem] h-[0.6rem];
+
+        }
+    }
+
+    &-p{
+        @apply font-roboto font-normal leading-[170%] text-white text-[1.5rem] mt-[1.5rem] mb-[3rem];
+        text-shadow: 0px 6px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    &-Form{
+        @apply  relative z-[5] bg-white rounded-[1rem] px-[3.3rem] mx-[1.6rem]  mt-[-10rem] pt-[3.5rem] pb-[3.4rem];
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.45);
+    }
+
+
+    @media screen(tablet){
+        &-Form{
+            @apply w-[70%] mx-auto;
+        }
+    }
+
+    @media screen(tabletlg){
+        &-Form{
+            @apply w-[60%] ;
+        }
+    }
+
+    @media screen(laptop){
+        margin-top: calc(-9.7rem * var(--scale));
+        height: calc(97rem * var(--scale));
+
+        &-Slide{
+            @apply p-0;
+        }       
+        &-content{
+            @apply absolute p-0;
+            bottom:  calc(22.8rem * var(--scale));
+            left:  calc(16.9rem * var(--scale));
+        }
+        &-h2{
+            font-size: calc(8rem * var(--scale));
+            padding-bottom: calc(3rem * var(--scale));
+
+            &::after{
+                width: calc(7.3rem * var(--scale));
+                height: calc(0.6rem * var(--scale));
+            }
+        }
+        &-p{
+            font-size: calc(2.1rem * var(--scale));
+            margin-top: calc(1.5rem * var(--scale));
+            margin-bottom: calc(7.5rem * var(--scale));
+        }
+
+        .swiper-slide{
+            height: calc(97rem * var(--scale));
+        }
+
+        &-Form{
+            @apply absolute m-0 z-[5] bg-white rounded-[1rem] w-full;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.45);
+            width: calc(57.6rem * var(--scale));
+            right: calc(21.6rem * var(--scale));
+            top: calc(16rem * var(--scale));
+            padding: calc(4.7rem * var(--scale))  calc(4.5rem * var(--scale));
+            padding-bottom: calc(2rem * var(--scale));
+        }
+        &-pagination {
+            @apply absolute flex justify-center items-end gap-4 bottom-[5%] left-[49%] z-[10] cursor-pointer;
+            .swiper-pagination-bullet {
+              transition: background-color 0.3s ease;
+              background: rgba(255, 255, 255, 0.5);
+              @apply w-[3.9rem] h-[0.4rem]  bg-[#F7C411];
+        
+              &-active {
+                @apply bg-[#F79B11] w-[3.9rem] h-[0.6rem];
+              }
+            }
+          }
+
+    }
+
+
+  
+
+}
+
