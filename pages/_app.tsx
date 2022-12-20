@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Tuesday</title>
+        <title>Virginia Chávez - Abogada</title>
         <Favicon />
       </Head>
       <GeneralsProvider generals={pageProps.generals}>
